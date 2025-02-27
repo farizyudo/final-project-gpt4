@@ -1,0 +1,22 @@
+{
+  "name": "performatrix-automation-testing",
+  "version": "1.0.0",
+  "description": "This is the final project of the geek trainee program to perform automated testing on the performatrix website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farizyudo/final-project-gpt4.git"
+  },
+  "author": "Fariz Yudo Prasetyo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/farizyudo/final-project-gpt4/issues"
+  },
+  "homepage": "https://github.com/farizyudo/final-project-gpt4#readme",
+  "devDependencies": {
+    "cypress": "^14.1.0"
+  }
+}
