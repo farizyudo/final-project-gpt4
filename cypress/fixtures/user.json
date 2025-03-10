@@ -1,0 +1,6 @@
+{
+    "valid_email": "super_user@gmail.com",
+    "valid_pass": "password",
+    "invalid_email": "username",
+    "invalid_pass": "Password"
+}
