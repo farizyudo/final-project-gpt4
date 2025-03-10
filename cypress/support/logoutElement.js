@@ -7,9 +7,8 @@ class logoutElement {
 
     berhasilLogout() {
         cy.get(this.klikProfile)
-            .should('be.visible') // Pastikan elemen profile terlihat
+            .should('be.visible') // Pastikan elemen profile terlihat { timeout: 5000 }
             .click()
-        // cy.wait(1000)
         cy.get(this.logout)
             .should('be.visible') // Pastikan elemen logout terlihat
             .click()

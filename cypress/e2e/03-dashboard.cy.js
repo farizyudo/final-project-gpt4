@@ -1,17 +1,21 @@
-import loginElement from "../support/loginElement"
+import loginElement from "../support/loginElement";
+import logoutElement from "../support/logoutElement";
+const userData = require('../fixtures/user.json')
 
+describe('e2e dashboard', () => {
 
-describe('Login', () => {
-
-    // Login Success | Positive Cases 
-
-    it('Login dengan email dan password valid', () => {                              // Login Success
+    beforeEach(() => {
         cy.visit('https://pxdemo.geekgarden.id/')
+        loginElement.inputUsername(userData.valid_email)
+        loginElement.inputPassword(userData.valid_pass)
+        loginElement.BTNlogin()
+    })
 
-        // Login
-        cy.get(loginElement.email).type('super_user@gmail.com')
-        cy.get(loginElement.pass).type('password')
-        cy.get(loginElement.logInButton).click()
+    after(() => {
+        logoutElement.berhasilLogout()
+    })
+
+    it('Dashboard', () => {                              // Login Success
 
         // 1. Dashboard
         cy.contains('PERFORMATRIX').should('be.visible')

@@ -2,7 +2,7 @@ import loginElement from "../support/loginElement";
 import logoutElement from "../support/logoutElement";
 const userData = require('../fixtures/user.json')
 
-describe('e2e', () => {
+describe('e2e Profile', () => {
 
     beforeEach(() => {
         cy.visit('https://pxdemo.geekgarden.id/')
@@ -15,9 +15,10 @@ describe('e2e', () => {
         logoutElement.berhasilLogout()
     })
 
-    it('', () => {
+    it('Profile', () => {
 
-    });
-
-
+        cy.get('.chakra-avatar__img').click()
+        cy.contains('Profile').click()
+        cy.get('.css-t72zj9 > :nth-child(1) > .chakra-button').click()
+    })
 })

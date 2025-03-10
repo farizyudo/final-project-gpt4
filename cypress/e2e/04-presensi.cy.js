@@ -1,16 +1,22 @@
-import loginElement from "../support/loginElement"
+import loginElement from "../support/loginElement";
+import logoutElement from "../support/logoutElement";
+const userData = require('../fixtures/user.json')
 
+describe('e2e presensi', () => {
 
-describe('Contoh', () => {
-    it('Login menggunakan password yang kosong', () => {
-
-        // Start Login
+    beforeEach(() => {
         cy.visit('https://pxdemo.geekgarden.id/')
-        cy.get(loginElement.email).type('super_user@gmail.com')
-        cy.get(loginElement.pass).type('password')
-        cy.get(loginElement.logInButton).click()
-        // End Login
+        loginElement.inputUsername(userData.valid_email)
+        loginElement.inputPassword(userData.valid_pass)
+        loginElement.BTNlogin()
+    })
 
+    after(() => {
+        logoutElement.berhasilLogout()
+    })
+
+
+    it('Presensi', () => {
 
         // 3. Presensi
         cy.get(':nth-child(4) > .css-q2nun9 > .chakra-text').click()
