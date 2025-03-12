@@ -11,10 +11,6 @@ describe('e2e', () => {
         loginElement.BTNlogin()
     })
 
-    after(() => {
-        logoutElement.berhasilLogout()
-    })
-
     it('', () => {
 
     });
